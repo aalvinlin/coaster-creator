@@ -1,6 +1,9 @@
 import React from "react";
 import TimelineView from "./components/TimelineView";
 
+import "./reset.css";
+import "./index.css";
+
 const App = () => {
 
   let elements = ["one", "two"];
