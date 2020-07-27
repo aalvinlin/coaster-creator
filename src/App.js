@@ -1,11 +1,14 @@
 import React from "react";
+import TimelineView from "./components/TimelineView";
 
 const App = () => {
 
-  render (
+  let elements = ["one", "two"];
+
+  return (
     <>
-      <h1>Welcome to React Parcel Micro App!</h1>
-      <p>Hard to get more minimal than this React app.</p>
+      <h1>Coaster Creator</h1>
+      <TimelineView elements={elements} />
     </>
   );
   }
