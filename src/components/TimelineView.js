@@ -25,6 +25,14 @@ const TimelineView = ({elements}) => {
 
       }
 
+      const ControlPoint = ({coordinates}) => {
+        return <Point coordinates={coordinates} color="#FFCCCC" />;
+      }
+
+      const VertexPoint = ({coordinates}) => {
+        return <Point coordinates={coordinates} color="#666666" />;
+      }
+
       const loop = (
         <>
           <path
@@ -40,16 +48,16 @@ const TimelineView = ({elements}) => {
             stroke="red"
             strokeWidth={5} />
           
-            <Point coordinates={entrance} color="#666666" />
-            <Point coordinates={right} color="#666666" />
-            <Point coordinates={top} color="#666666" />
-            <Point coordinates={left} color="#666666" />
-            <Point coordinates={exit} color="#666666" />
+            <VertexPoint coordinates={entrance} />
+            <VertexPoint coordinates={right} />
+            <VertexPoint coordinates={top} />
+            <VertexPoint coordinates={left} />
+            <VertexPoint coordinates={exit} />
 
-            <Point coordinates={controlPointEntranceToRight} color="#FFCCCC" />
-            <Point coordinates={controlPointRightToTop} color="#FFCCCC" />
-            <Point coordinates={controlPointTopToLeft} color="#FFCCCC" />
-            <Point coordinates={controlPointLeftToExit} color="#FFCCCC" />
+            <ControlPoint coordinates={controlPointEntranceToRight} />
+            <ControlPoint coordinates={controlPointRightToTop} />
+            <ControlPoint coordinates={controlPointTopToLeft} />
+            <ControlPoint coordinates={controlPointLeftToExit} />
           </>
       );
 
