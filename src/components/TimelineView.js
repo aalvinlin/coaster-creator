@@ -35,6 +35,9 @@ const TimelineView = ({elements}) => {
 
       const Loop = ({entranceX, entranceY, height}) => {
 
+        entranceX = parseInt(entranceX);
+        entranceY = parseInt(entranceY);
+
         let width = height / 2;
 
         let farSideX = entranceX + width;
@@ -49,18 +52,20 @@ const TimelineView = ({elements}) => {
         let exitX = entranceX + width;
         let exitY = entranceY;
 
+        let pointSequence =
+          `
+            M ${entranceX},${entranceY}
+            Q ${farSideX},${farSideY}
+            Q ${nearSideX},${nearSideY}
+            Q ${exitX},${exitY}
+          `;
+
+        console.log(pointSequence)
+
         return (
             
           <>
-            <path fill="none" stroke="red" strokeWidth={5}
-              d={`
-                M ${entrance}
-                Q ${entranceX},${entranceY}
-                Q ${farSideX}, ${farSideY}
-                Q ${nearSideX}, ${nearSideY}
-                Q ${exitX}, ${exitY}
-              `}
-            />
+            <path d={pointSequence} fill="none" stroke="red" strokeWidth={5} />
             
             <VertexPoint coordinates={[entranceX, entranceY]} />
             <VertexPoint coordinates={[farSideX, farSideY]} />
