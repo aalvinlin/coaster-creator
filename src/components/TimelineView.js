@@ -2,20 +2,6 @@ import React from "react";
 
 const TimelineView = ({elements}) => {
 
-      const entrance = [0, 400];
-      const controlPointEntranceToRight = [275, 400];
-
-      const right = [300, 200];
-      const controlPointRightToTop = [290, 100];
-      
-      const top = [200, 100];
-      const controlPointTopToLeft = [110, 100];
-      
-      const left = [100, 200];
-      const controlPointLeftToExit = [125, 400];
-      
-      const exit = [400, 400];
-      
       const Point = ({coordinates, color}) => {
 
         let [cx, cy] = coordinates;
