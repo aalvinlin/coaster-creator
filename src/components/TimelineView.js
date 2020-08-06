@@ -24,16 +24,16 @@ const TimelineView = ({elements}) => {
         entranceX = parseInt(entranceX);
         entranceY = parseInt(entranceY);
 
-        let width = height / 2;
+        let width = height * 2 / 3;
 
         let farSideX = entranceX + width;
-        let farSideY = entranceY - height / 2;
+        let farSideY = entranceY - height * 3 / 5;
 
         let topX = entranceX + width / 2;
         let topY = entranceY - height;
 
         let nearSideX = entranceX;
-        let nearSideY = entranceY - height / 2;
+        let nearSideY = entranceY - height * 3 / 5;
 
         let exitX = entranceX + width;
         let exitY = entranceY;
@@ -41,9 +41,10 @@ const TimelineView = ({elements}) => {
         let pointSequence =
           `
             M ${entranceX},${entranceY}
-            Q ${farSideX},${farSideY}
-            Q ${nearSideX},${nearSideY}
-            Q ${exitX},${exitY}
+            C ${entranceX + width / 2},${entranceY} ${farSideX},${farSideY + height / 4} ${farSideX},${farSideY}
+            C ${farSideX},${farSideY - height / 4} ${topX + width / 4},${topY} ${topX},${topY}
+            C ${topX - width / 4},${topY} ${nearSideX},${nearSideY - height / 4} ${nearSideX},${nearSideY}
+            C ${nearSideX},${nearSideY + height / 4} ${exitX - width / 2},${exitY} ${exitX},${exitY}
           `;
 
         console.log(pointSequence)
@@ -70,7 +71,7 @@ const TimelineView = ({elements}) => {
 
     return (
         <svg viewBox="0 0 800 800">
-            <Loop entranceX="0" entranceY="800" height="400" />
+            <Loop entranceX="20" entranceY="450" height="400" />
         </svg>
     );
 
