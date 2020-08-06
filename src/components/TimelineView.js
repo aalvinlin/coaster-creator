@@ -19,6 +19,52 @@ const TimelineView = ({elements}) => {
         return <Point coordinates={coordinates} color="#666666" />;
       }
 
+      const LiftHill = ({entranceX, entranceY, height, angle}) => {
+
+        entranceX = parseInt(entranceX);
+        entranceY = parseInt(entranceY);
+
+        let width = height / Math.tan(angle * Math.PI / 180);
+
+        let leadInWidth = width / 2;
+        let leadOutWidth = width / 2;
+
+        let straightStartX = entranceX + leadInWidth;
+        let straightStartY = entranceY - Math.tan(angle * Math.PI / 180) * leadInWidth / 2;
+
+        let straightEndX = straightStartX + width;
+        let straightEndY = straightStartY - height;
+
+        let exitX = straightEndX + leadInWidth;
+        let exitY = straightEndY - Math.tan(angle * Math.PI / 180) * leadOutWidth / 2;
+        
+        let pointSequence =
+        `
+          M ${entranceX},${entranceY}
+          Q ${entranceX + leadInWidth / 2},${entranceY} ${straightStartX},${straightStartY}
+          L ${straightStartX},${straightStartY} ${straightEndX},${straightEndY}
+          Q ${straightEndX + leadInWidth / 2},${exitY} ${exitX},${exitY}
+        `;
+
+        return (
+            
+          <>
+            <path d={pointSequence} fill="none" stroke="red" strokeWidth={5} />
+            
+            <VertexPoint coordinates={[entranceX, entranceY]} />
+            <VertexPoint coordinates={[straightStartX, straightStartY]} />
+            <VertexPoint coordinates={[straightEndX, straightEndY]} />
+            <VertexPoint coordinates={[exitX, exitY]} />
+
+            {/* <ControlPoint coordinates={controlPointEntranceToRight} />
+            <ControlPoint coordinates={controlPointRightToTop} />
+            <ControlPoint coordinates={controlPointTopToLeft} />
+            <ControlPoint coordinates={controlPointLeftToExit} /> */}
+          </>
+      );
+
+      }
+
       const Loop = ({entranceX, entranceY, height}) => {
 
         entranceX = parseInt(entranceX);
@@ -47,8 +93,6 @@ const TimelineView = ({elements}) => {
             C ${nearSideX},${nearSideY + height / 4} ${exitX - width / 2},${exitY} ${exitX},${exitY}
           `;
 
-        console.log(pointSequence)
-
         return (
             
           <>
@@ -72,6 +116,7 @@ const TimelineView = ({elements}) => {
     return (
         <svg viewBox="0 0 800 800">
             <Loop entranceX="20" entranceY="450" height="400" />
+            <LiftHill entranceX="400" entranceY="450" height="200" angle="60" />
         </svg>
     );
 
