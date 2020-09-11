@@ -4,7 +4,15 @@ const Load = () => {
 
   return (
     <>
-      
+      <h1>Load a Saved Coaster</h1>
+
+      <div className="savedList">
+
+      </div>
+
+      <div className="layoutPreview">
+
+      </div>
     </>
   );
   }
