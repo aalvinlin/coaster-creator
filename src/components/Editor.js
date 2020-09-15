@@ -31,6 +31,11 @@ const Editor = () => {
                 </div>
 
                 <div className="currentPartSettings">
+                  <h2>Settings</h2>
+
+                  <div className="settingsContainer">
+
+                  </div>
 
                 </div>
                 
