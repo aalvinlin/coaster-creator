@@ -2,6 +2,10 @@ import React from "react";
 
 const Editor = () => {
 
+
+  let elements = ["one", "two"];
+
+
   return (
     <>
       <div className="editorContainer">
@@ -21,7 +25,7 @@ const Editor = () => {
           <div className="editorMain">
 
             <div className="timelineView">
-
+              <TimelineView elements={elements} />
             </div>
 
             <div className="currentPartContainer">

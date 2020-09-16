@@ -1,14 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import TimelineView from "./components/TimelineView";
+import Editor from "./components/Editor";
+import Load from "./components/Load";
 
 import "./reset.css";
 import "./index.css";
 
 const App = () => {
-
-  let elements = ["one", "two"];
 
   return (
     <>
@@ -17,10 +16,12 @@ const App = () => {
         
         <Route path="/create">
           <h1>Coaster Creator</h1>
-          <TimelineView elements={elements} />
+          
         </Route>
 
         <Route path="/load">
+
+          <TimelineView elements={elements} />
 
         </Route>
 
