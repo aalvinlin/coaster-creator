@@ -8,6 +8,10 @@ const Load = () => {
 
       <div className="savedList">
 
+        <ul>
+          {localStorage.map(coaster => <li>{coaster}</li>)}
+        </ul>
+
       </div>
 
       <div className="layoutPreview">
