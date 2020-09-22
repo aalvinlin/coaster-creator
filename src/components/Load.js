@@ -17,6 +17,8 @@ const Load = () => {
       <div className="layoutPreview">
 
       </div>
+
+      <button>Load</button>
     </>
   );
   }
