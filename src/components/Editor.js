@@ -5,6 +5,7 @@ const Editor = () => {
 
   let elements = ["one", "two"];
 
+  let trackTypes = ["track1", "track2"];
 
   return (
     <>
@@ -17,7 +18,7 @@ const Editor = () => {
             </div>
 
             <div className="trackTypePicker">
-                
+                { trackTypes.map(trackType => trackType) }
             </div>
 
           </div>
