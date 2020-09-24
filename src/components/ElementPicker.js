@@ -1,8 +1,7 @@
 import React from "react";
+import elements from "../trackData/elements";
 
 const ElementPicker = () => {
-
-  const elements = [];
 
   return (
     <>
