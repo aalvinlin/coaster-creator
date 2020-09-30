@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 const Load = () => {
 
+  const currentCoaster = useState(null);
+
   return (
     <>
       <h1>Load a Saved Coaster</h1>
@@ -15,6 +17,8 @@ const Load = () => {
       </div>
 
       <div className="layoutPreview">
+
+        <h2>{ currentCoaster.name }</h2>
 
       </div>
 
