@@ -28,6 +28,14 @@ const elements = {
 
     },
 
+    "cobraRoll": {
+
+    },
+
+    "diveLoop": {
+
+    },
+
 };
 
 export default elements;
