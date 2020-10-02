@@ -6,6 +6,14 @@ const trackTypes = {
 
     "steelTwister": {
         
+    },
+
+    "singleRail": {
+        
+    },
+
+    "dualRail": {
+        
     }
 
 };
