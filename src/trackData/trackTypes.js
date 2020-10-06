@@ -14,7 +14,11 @@ const trackTypes = {
 
     "dualRail": {
         
-    }
+    },
+
+    "junior": {
+        
+    },
 
 };
 
